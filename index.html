@@ -7,18 +7,41 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            background-color: #e0f7fa; /* Light blue background */
             margin: 0;
             padding: 0;
             text-align: center;
         }
         header {
-            background-color: #333;
+            background-color: #0277bd; /* Blue */
             color: white;
             padding: 1rem 0;
         }
-        h1 {
-            margin: 0;
+        nav {
+            background-color: #0288d1; /* Blue */
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: bold;
+        }
+        .upload-form {
+            margin: 2rem 0;
+            padding: 1rem;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .upload-form input[type="file"] {
+            margin: 1rem 0;
         }
         .gallery {
             display: flex;
@@ -26,12 +49,38 @@
             justify-content: center;
             padding: 2rem;
         }
-        .gallery img {
+        .gallery-item {
             margin: 1rem;
             border: 2px solid #ccc;
             border-radius: 10px;
-            max-width: 200px;
-            max-height: 200px;
+            overflow: hidden;
+            width: 200px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s;
+        }
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+        }
+        .description {
+            padding: 0.5rem;
+            background-color: #fff;
+            text-align: left;
+        }
+        footer {
+            background-color: #0277bd; /* Blue */
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        footer a {
+            color: white;
+            margin: 0 1rem;
         }
     </style>
 </head>
@@ -39,18 +88,66 @@
     <header>
         <h1>Photo Hub</h1>
     </header>
-    <section class="gallery">
-        <h2>Gallery</h2>
-        <img src="1EngineerMaduChibuezeMutui.JPG" alt="Engineer Madu Chibueze Mutui">
-        <img src="2Ebenezer.JPG" alt="Ebenezer">
-        <img src="3Mike.JPG" alt="Mike">
-        <img src="4Vivian.JPG" alt="Vivian">
-        <img src="5Ejike.JPG" alt="Ejike">
-        <img src="6Jennifer.JPG" alt="Jennifer">
-        <img src="7Zion.JPG" alt="Zion">
-        <img src="8Success.JPG" alt="Success">
-        <img src="9Victor.JPG" alt="Victor">
-        <img src="10Divine.JPG" alt="Divine">
+    <nav>
+        <a href="#">Home</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <section class="upload-form">
+        <h2>Upload Your Picture</h2>
+        <form method="post" enctype="multipart/form-data" action="upload.php">
+            <input type="file" name="photo" accept="image/*" required>
+            <button type="submit">Upload</button>
+        </form>
     </section>
+    <section class="gallery" id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery-item">
+            <img src="1EngineerMaduChibuezeMutui.JPG" alt="Engineer Madu Chibueze Mutui">
+            <div class="description">Engineer Madu Chibueze Mutui</div>
+        </div>
+        <div class="gallery-item">
+            <img src="2Ebenezer.JPG" alt="Ebenezer">
+            <div class="description">Ebenezer</div>
+        </div>
+        <div class="gallery-item">
+            <img src="3Mike.JPG" alt="Mike">
+            <div class="description">Mike</div>
+        </div>
+        <div class="gallery-item">
+            <img src="4Vivian.JPG" alt="Vivian">
+            <div class="description">Vivian</div>
+        </div>
+        <div class="gallery-item">
+            <img src="5Ejike.JPG" alt="Ejike">
+            <div class="description">Ejike</div>
+        </div>
+        <div class="gallery-item">
+            <img src="6Jennifer.JPG" alt="Jennifer">
+            <div class="description">Jennifer</div>
+        </div>
+        <div class="gallery-item">
+            <img src="7Zion.JPG" alt="Zion">
+            <div class="description">Zion</div>
+        </div>
+        <div class="gallery-item">
+            <img src="8Success.JPG" alt="Success">
+            <div class="description">Success</div>
+        </div>
+        <div class="gallery-item">
+            <img src="9Victor.JPG" alt="Victor">
+            <div class="description">Victor</div>
+        </div>
+        <div class="gallery-item">
+            <img src="10Divine.JPG" alt="Divine">
+            <div class="description">Divine</div>
+        </div>
+    </section>
+    <footer>
+        <p>Follow us on:</p>
+        <a href="https://www.facebook.com" target="_blank">Facebook</a>
+        <a href="https://www.twitter.com" target="_blank">Twitter</a>
+        <a href="https://www.instagram.com" target="_blank">Instagram</a>
+    </footer>
 </body>
 </html>
